@@ -7,15 +7,20 @@
     <style>
         div{
             width: auto;
-            height: 200px;
+            height: 500px;
             background-color: orange;
         }
         span{
+            display: inline-block;
             width: 200px;
             height: 100px;
             padding: 30px;
-            margin: 30px;
+            margin-right: 30px;
+            box-sizing: border-box;
         }
+        /* 만약 box-sizing: content-box로 하면 content-box는 width+padding+border이기 때문에
+        각각의 상자가 260(200+ 30 + 30) * 160(100+30+30)이 된다. 따라서 width값만 적용시키기 위해선
+        width만 적용되는 border-box로 적용해주어야 한다.*/
     </style>
 </head>
 <body>

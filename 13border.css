@@ -1,0 +1,25 @@
+div{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.border1{
+    border-width: 2px 4px 6px 8px;
+}
+
+.border2{
+    border-style: dashed dotted double solid;
+}
+
+.border3{
+    border-color: red yellow green blue;
+}
+
+.border4{
+    border-bottom: 10px dotted purple;
+    border-top: 5px double skyblue;
+    border-left: 8px dashed palevioletred;
+    border-right: 3px groove yellowgreen;
+}

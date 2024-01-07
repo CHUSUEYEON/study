@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 쌓임 순서 및 z-index</title>
+    <link rel="stylesheet" href="./16z-index.css">
+</head>
+<body>
+    <div class="container1">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+    </div>
+
+    <div class="container2">
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <p>5가 노랑, 6이 파랑임</p>
+    </div>
+</body>
+</html>
+
+<!-- 500px 500px container 클래스 선언
+컨테이너 안에100px 100px 아이템 1,2,3 div 선언
+아이템2는 top, left 30px
+아이템3은 top, left 60px
+아이템 3,2,1 순서대로 보이도록 설정
+아이템 4,6,5 순서대로 보이도록 설정 -->
