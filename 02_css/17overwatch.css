@@ -16,11 +16,11 @@
     flex-wrap: wrap;
     width: 900px;
     height: 400px;
-
 }
+
 .hero{
     border: 2px solid white;
-    border-radius: 25% 10%;
+    border-radius: 20% 10%;
     background-color: gray;
     background-size: cover;
     width: 100px;
@@ -28,12 +28,14 @@
     cursor: pointer;
     transition-duration: 2s;
     margin: 5px;
+    transform: skewX(-10deg);
 }
 
 .hero:hover{
     transform: scale(1.2) skewX(-10deg);
     background-color: orange;
 }
+
 
 .hero:nth-child(1){
     background-image: url(../img/overwatch/hero1.png);
@@ -134,9 +136,14 @@
 
 .logo{
     background-image: url(../img/overwatch/logo_overwatch.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 400px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     top: 150px;
 }
+
+
+ 
