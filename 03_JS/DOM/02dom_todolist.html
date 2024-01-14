@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list(실습39)</title>
+    <style>
+        li{
+            margin: 4px 0;
+            /* 글씨에 딱 맞게 배경 주려면 어떻게 해야 하는지 실제(?)랑 비교해보기 */
+        }
+        
+        .done > span{
+            background-color: rgb(239, 208, 31);
+            font-weight: bold;
+        }
+
+        .todo > span{
+            text-decoration: line-through;
+            color: gray;
+            /* 내가 한 건 점에도 색깔이 입혀짐. 실제랑 비교하며 점은 검정 그대로 가게 하려면 어떻게 해야 하는지 보기 */
+            font-style: italic;
+        }
+
+        .d-none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <h1>TODO list</h1>
+        <ul>
+            <li class="done">
+                <span>점심 먹기</span>
+            </li>
+            <li class="done">
+                <span>커피 마시기</span>
+            </li>
+            <li class="todo">
+                <span>과제 완성하기</span>
+            </li>
+            <li class="todo">
+                <span>운동하기</span>
+            </li>
+            <li class="todo">
+                <span>저녁먹기</span>
+            </li>
+        </ul>
+
+
+    <script>
+        let lis = document.querySelectorAll('li');
+        console.log(lis);
+        // let done = document.getElementsByClassName('done');
+        // let todo = document.getElementsByClassName('todo');
+        // done.classList.toggle('d-none');
+        // todo.classList.toggle('done');
+
+        // let li = document.querySelectorAll('li');
+        // li.classList.toggle('done');
+        // li.classList.toggle('todo');
+
+        // let n = document.querySelectorAll('li');
+        // for(let li of n){
+        //     li.classList.toggle('done');
+        //     li.classList.toggle('todo');
+        // }
+
+        // toggle 다시...ㅠ
+    </script>
+</body>
+</html>
