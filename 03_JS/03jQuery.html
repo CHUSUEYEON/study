@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>과일 이미지 바꾸기</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .border {
+            width: 300px;
+            height: 300px;
+            border: 10px solid rgb(238, 190, 34);
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+        button {
+            width: 50px;
+            height: 30px;
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            font-size: 50Px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+            top: 50px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            bottom: 190px;
+        }
+    </style>
+        <script>
+            // function change(){
+            //     let fruits = ['apple', 'peach', 'banana', 'grape'];
+            //     // console.log(fruits);
+            //     for (let f of fruits){
+            //         console.log(f);
+            //         $('h1').html('`<img src="../img/${fruits}.jpeg" alt="${fruits}" />`');
+            //     }
+                
+            //     // $('img').attr("src", "`../img/${fruits}.jpeg`");
+            // }
+    
+            // function apple(){
+            //     console.log($('h1').attr("src", "../img/apple.jpeg"));
+            //     $('img').attr("src", "../img/apple.jpeg");
+            // }
+    
+            function change(name){
+                // console.log($('img').attr('src', `../img/${name}.jpeg`));
+                $('img').attr('src', `../img/${name}.jpeg`);
+            }
+    
+            
+        </script>
+</head>
+<body>
+    <div class="border">
+        <h1><span style= "background-color:yellow">과일</span>을 <br /> 
+            골라볼게요</h1>
+        <img src="" alt="">
+    </div>
+    <div class="container">
+        <button onclick="change('apple')">사과</button>
+        <button onclick="change('banana')">바나나</button>
+        <button onclick="change('grape')">포도</button>
+        <button onclick="change('peach')">복숭아</button>
+    </div>
+
+
+</body>
+</html>

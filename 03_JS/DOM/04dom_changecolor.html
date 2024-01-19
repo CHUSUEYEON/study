@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 색상 생성기</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap; */
+        }
+
+        div {
+            text-align: center;
+            /* position: relative; */
+            /* top: 400px; */
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; */
+        }
+
+        h2 {
+            /* position: relative;
+            left: 150px; */
+        }
+
+        button {
+            /* position: relative;
+            left: 180px; */
+        }
+        /* displat flex로 가운데 정렬은 못하나? 꼭 수동으로 해야하는지..비교해보기 */
+        /* h2 위치......비교해보기 */
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>👩‍🎨 Create Random Color 🌈</h1>
+        <h2>색상</h2>
+        <button onclick="change()">change</button>
+    </div>
+
+    <script>
+        function change(){
+            let body = document.querySelector('body');
+            let r = Math.floor(Math.random()*256);
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            console.log(r);
+            console.log(g);
+            console.log(b);
+            let rgb = `rgb(${r}, ${g}, ${b})`
+            console.log(rgb);
+            body.style.backgroundColor = rgb;
+            let h2 = document.querySelector('h2');
+            h2.innerHTML = (rgb);
+        }
+    </script>
+</body>
+</html>
