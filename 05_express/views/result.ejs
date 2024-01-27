@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>실습 결과</title>
   </head>
   <body>
-    <div><%=userInfo.name%>님 안녕하세요.</div>
+    <div><span><%=userInfo.name%>님, 안녕하세요?</span></div>
+    <%=userInfo.year%>/<%=userInfo.month%>/<%=userInfo.date%>
+    <%=userInfo.favorite%> <%if(addInfo){%>
+    <span><%=userInfo.color%></span>
+    <span><%=userInfo.num%></span>
+    <%}%>
   </body>
 </html>
