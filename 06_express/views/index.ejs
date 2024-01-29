@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POST 연습</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>express 연습</title>
   </head>
   <body>
-    <h1>POST 연습</h1>
-    <form action="/postForm" method="get" target="_blank">
+    <h1>get 연습</h1>
+    <form name="register">
       이름 <input type="text" name="name" />
       <br />
       <fieldset>
@@ -22,6 +23,35 @@
           30대 <input type="radio" id="three" name="age" value="30대" />
         </label>
       </fieldset>
+      <button type="button" onclick="axiosGet()">입력</button>
+
+      <div class="result"></div>
     </form>
+    <script>
+      const resultBox = document.querySelector(".result");
+      async function axiosGet() {
+        const form = document.forms["register"];
+        // const a = [];
+        // if (forEach(el)) {
+        // }
+        const data = {
+          name: form.name.value,
+          age: form.age.value,
+        };
+        try {
+          response = await axios({
+            method: "GET",
+            url: "/axios",
+            params: data,
+          });
+          console.log(response.data);
+          const { name, age } = response.data;
+          resultBox.innerText = `${name}님, 안녕하세요?`;
+          resultBox.style.color = "orange";
+        } catch (err) {
+          console.log("err", err);
+        }
+      }
+    </script>
   </body>
 </html>
