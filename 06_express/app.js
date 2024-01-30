@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", function (req, res) {
-  res.render("login");
+  res.render("index");
 });
 
 app.get("/axios", (req, res) => {

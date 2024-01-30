@@ -3,14 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>실습 결과</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>POST로 정보 입력</title>
   </head>
   <body>
-    <div><span><%=userInfo.name%>님, 안녕하세요?</span></div>
-    <%=userInfo.year%>/<%=userInfo.month%>/<%=userInfo.date%>
-    <%=userInfo.favorite%> <%if(addInfo){%>
-    <span><%=userInfo.color%></span>
-    <span><%=userInfo.num%></span>
-    <%}%>
+    <h1>설문조사</h1>
+    <form name="register">
+      <p>설문조사</p>
+      <fieldset>
+        <legend>유입경로</legend>
+        <label for="recommend"
+          >지인추천<input
+            type="radio"
+            name="way"
+            id="recommend"
+            value="지인추천"
+            required
+        /></label>
+        <label for="internet"
+          >인터넷검색<input
+            type="radio"
+            name="way"
+            id="internet"
+            value="인터넷검색"
+            required
+        /></label>
+        <label for="etc"
+          >기타<input type="radio" name="way" id="etc" value="기타" required
+        /></label>
+      </fieldset>
+      <br />
+      <textarea
+        id="wantToSay"
+        name="wantToSay"
+        cols="30"
+        rows="10"
+        placeholder="건의사항"
+      ></textarea>
+      <br />
+      <button type="button" onclick="postAxios()">등록</button>
+      <br />
+      <div class="result"></div>
+    </form>
+    <script>
+      const resultBox = document.querySelector(".result");
+      async function postAxios() {
+        const form = document.forms["register"];
+        const data = {
+          way: form.way.value,
+          wantToSay: form.wantToSay.value,
+        };
+        try {
+          response = await axios({
+            method: "POST",
+            url: "/axios",
+            data: data,
+          });
+          console.log(response.data);
+          const { way, wantToSay } = response.data;
+          const a = document.getElementById("wantToSay");
+          if (a == "") {
+            alert("빈 칸을 입력해주세요.");
+          } else {
+            resultBox.innerHTML = "<p style=color:blue> 등록 되었습니다.</p>";
+          }
+        } catch (err) {
+          console.log("err!!!:", err);
+        }
+      }
+    </script>
   </body>
 </html>
