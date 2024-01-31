@@ -38,6 +38,7 @@
         name="wantToSay"
         cols="30"
         rows="10"
+        required
         placeholder="건의사항"
       ></textarea>
       <br />
@@ -53,18 +54,21 @@
           way: form.way.value,
           wantToSay: form.wantToSay.value,
         };
+
+        console.log(form.way[0].checkValidity());
+        console.log(form.way[1].checkValidity());
+        console.log(form.wantToSay.checkValidity());
         try {
-          response = await axios({
-            method: "POST",
-            url: "/axios",
-            data: data,
-          });
-          console.log(response.data);
-          const { way, wantToSay } = response.data;
-          const a = document.getElementById("wantToSay");
-          if (a == "") {
+          if (!form.wantToSay.checkValidity() || !form.way[0].checkValidity()) {
             alert("빈 칸을 입력해주세요.");
           } else {
+            response = await axios({
+              method: "POST",
+              url: "/axios",
+              data: data,
+            });
+            console.log(response.data);
+            const { way, wantToSay } = response.data;
             resultBox.innerHTML = "<p style=color:blue> 등록 되었습니다.</p>";
           }
         } catch (err) {

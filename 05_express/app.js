@@ -18,7 +18,7 @@ app.use(express.json());
 // });
 
 app.get("/", (req, res) => {
-  res.render("result");
+  res.render("survey");
 });
 
 app.post("/axios", (req, res) => {
