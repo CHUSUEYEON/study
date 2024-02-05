@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=user%>의 그림 일기</title>
+  </head>
+  <body>
+    <h1><%=user%>의 그림 일기🤩</h1>
+    <form action="/diary" method="post">
+      <input type="text" name="title" id="title" placeholder="제목" />
+      <input type="file" name="photo" id="photo" />
+      <textarea
+        name="content"
+        id="content"
+        cols="30"
+        rows="10"
+        placeholder="내용을 입력하세요."
+      ></textarea>
+    </form>
+  </body>
+</html>
