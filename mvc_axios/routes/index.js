@@ -1,7 +1,8 @@
-const Controller = require("../controller/Cmain");
+const controller = require("../controllers/Cmain");
 const express = require("express");
 const router = express.Router();
 
-router.get = ("/", Controller.main);
+router.get("/", controller.main);
+router.post("/axios", controller.comment);
 
 module.exports = router;

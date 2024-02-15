@@ -11,10 +11,6 @@ app.use(express.json());
 const indexRouter = require("./routes");
 app.use("/", indexRouter);
 
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
-
 app.get("*", (req, res) => {
   res.render("404");
 });
