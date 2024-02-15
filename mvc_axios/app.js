@@ -11,8 +11,12 @@ app.use(express.json());
 const indexRouter = require("./routes");
 app.use("/", indexRouter);
 
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
+
 app.get("*", (req, res) => {
-  res.send("404입니다.");
+  res.render("404");
 });
 
 app.listen(PORT, () => {
