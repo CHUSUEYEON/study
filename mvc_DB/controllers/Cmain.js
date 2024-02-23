@@ -5,8 +5,9 @@ exports.main = (req, res) => {
 };
 
 exports.check = (req, res) => {
-  console.log(Member.membersinfo());
-  res.render("members", {
-    membersinfo: Member.membersinfo(),
-  });
+  res.send("good");
+  // console.log(Member.membersinfo());
+  // res.render("members", {
+  //   membersinfo: Member.membersinfo(),
+  // });
 };

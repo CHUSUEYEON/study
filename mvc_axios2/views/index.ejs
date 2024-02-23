@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댓글 등록</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      #comment {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comment</h1>
+    <div id="commentBox"></div>
+    <hr />
+    <form name="form-comment">
+      <fieldset>
+        <legend>comment 달기</legend>
+        <input type="text" name="id" id="id" placeholder="ID를 입력하세요" />
+        <br />
+        <textarea
+          name="comment"
+          id="comment"
+          cols="70"
+          rows="10"
+          placeholder="댓글 입력"
+        ></textarea
+        ><br />
+        <button type="button" onclick="write()">등록</button>
+      </fieldset>
+    </form>
+    <script>
+      async function write() {
+        const form = document.forms["form-comment"];
+        const commentBox = document.getElementById("commentBox");
+        const data = {
+          id: form.id.value,
+          comment: form.comment.value,
+        };
+        try {
+          response = await axios({
+            method: "POST",
+            url: "/axios",
+            data: data,
+          });
+          console.log(response.data);
+          const { id, comment } = response.data;
+          const addResult = document.createElement("addResult");
+          addResult.innerHTML = `${id} : ${comment}`;
+          commentBox.append(addResult);
+        } catch (error) {
+          console.log("err::", err);
+        }
+      }
+    </script>
+  </body>
+</html>
