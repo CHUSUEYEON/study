@@ -1,3 +1,5 @@
+import "./App.css";
+
 function App() {
   const name = "나나";
   const animal = "고양이";
